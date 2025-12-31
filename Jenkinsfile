@@ -1,4 +1,4 @@
-def gv
+def gv //importing groovy script function
 
 pipeline {   
     agent any
@@ -9,7 +9,7 @@ pipeline {
         stage("init") {
             steps {
                 script {
-                    gv = load "script.groovy"
+                    gv = load "script.groovy" //initializing groovy script
                 }
             }
         }
