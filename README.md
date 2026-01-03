@@ -1,1 +1,1 @@
-# java-maven-app 12
+# java-maven-app
