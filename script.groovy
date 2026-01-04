@@ -13,7 +13,11 @@ def buildImage() {
 }
 
 def deployApp() {
-    echo 'deploying the application...'
+    input message: 'Do you want to deploy the application?', ok: 'Deploy'
+    parameters{
+        choice(name: 'ENV', choices: ['dev', 'prod', 'staging'], description: 'Select environment')
+    }
+    echo "deploying the application to ${ENV} environment..."
 }
 
 return this
