@@ -26,7 +26,7 @@ pipeline {
             // }
             steps {
                 script {
-                    buildJar()
+                    buildjar()
 
                 }
             }
@@ -40,7 +40,7 @@ pipeline {
             // }
             steps {
                 script {
-                    buildImage()
+                    buildimage()
                 }
             }
         }
