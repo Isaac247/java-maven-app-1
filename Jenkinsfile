@@ -40,7 +40,7 @@ pipeline {
             // }
             steps {
                 script {
-                    buildimage()
+                    buildimage 'izik247/java-app:jma-3.1'
                 }
             }
         }
