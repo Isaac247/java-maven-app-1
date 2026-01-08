@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@library('jenkins-shared-library') _
+@Library('jenkins-shared-library')
 def gv //importing groovy script function
 
 pipeline {   
