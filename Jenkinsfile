@@ -4,9 +4,9 @@ def gv //importing groovy script function
 
 pipeline {   
     agent any
-    //  parameters {
-    //     choice(name: 'ENV', choices: ['dev', 'prod', 'staging'], description: 'Select environment')
-    // }
+    parameters {
+        choice(name: 'ENV', choices: ['dev', 'prod', 'staging'], description: 'Select environment')
+    }
     tools {
         maven 'Maven'
     }
