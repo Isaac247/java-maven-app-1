@@ -1,10 +1,12 @@
+#!/usr/bin/env groovy
+@library('jenkins-shared-library') _
 def gv //importing groovy script function
 
 pipeline {   
     agent any
-     parameters {
-        choice(name: 'ENV', choices: ['dev', 'prod', 'staging'], description: 'Select environment')
-    }
+    //  parameters {
+    //     choice(name: 'ENV', choices: ['dev', 'prod', 'staging'], description: 'Select environment')
+    // }
     tools {
         maven 'Maven'
     }
@@ -17,28 +19,28 @@ pipeline {
             }
         }
         stage("build jar") {
-            when {
-                expression {
-                    BRANCH_NAME == 'master'
-                }
-            }
+            // when {
+            //     expression {
+            //         BRANCH_NAME == 'master'
+            //     }
+            // }
             steps {
                 script {
-                    gv.buildJar()
+                    buildJar()
 
                 }
             }
         }
 
         stage("build image") {
-            when {
-                expression {
-                    BRANCH_NAME == 'master'
-                }
-            }
+            // when {
+            //     expression {
+            //         BRANCH_NAME == 'master'
+            //     }
+            // }
             steps {
                 script {
-                    gv.buildImage()
+                    buildImage()
                 }
             }
         }
