@@ -2,9 +2,6 @@ def gv //importing groovy script function
 
 pipeline {   
     agent any
-     parameters {
-        choice(name: 'ENV', choices: ['dev', 'prod', 'staging'], description: 'Select environment')
-    }
     tools {
         maven 'Maven'
     }
@@ -31,11 +28,6 @@ pipeline {
         }
 
         stage("build image") {
-            when {
-                expression {
-                    BRANCH_NAME == 'master'
-                }
-            }
             steps {
                 script {
                     gv.buildImage()
