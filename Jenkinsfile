@@ -43,6 +43,13 @@ pipeline {
                     gv.deployApp()
                 }
             }
+        }
+        stage("push changes") {
+            steps {
+                script {
+                    gv.jenkinsPush()
+                }
+            }
         }               
     }
 } 

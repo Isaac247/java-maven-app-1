@@ -26,5 +26,18 @@ def buildImage() {
 def deployApp() {
     echo "deploying the application to environment..."
 }
+def jenkinsPush() {
+  withCredentials([usernamePassword(credentialsId: 'github.credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+        sh 'git config --global user.email "jenkins@example.com"'
+        sh 'git config --global user.name "jenkins"'
+        
+        sh 'git status'
+        sh 'git branch'
+        sh 'config --list'
+
+        sh 'git add .'
+        sh 'commit -m "pushed from jenkins "'
+        sh 'git push origin HEAD:versioning'  
+}
 
 return this
