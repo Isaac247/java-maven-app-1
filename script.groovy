@@ -33,7 +33,7 @@ def jenkinsPush() {
         
         sh 'git status'
         sh 'git branch'
-        sh 'config --list'
+        sh 'git config --list'
 
         sh 'git add .'
         sh 'commit -m "pushed from jenkins "'
