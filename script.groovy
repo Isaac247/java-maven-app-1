@@ -38,6 +38,6 @@ def jenkinsPush() {
         sh 'git add .'
         sh 'commit -m "pushed from jenkins "'
         sh 'git push origin HEAD:versioning'  
+    }
 }
-
 return this
